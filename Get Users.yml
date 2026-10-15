@@ -9,7 +9,7 @@ http:
 
 runtime:
   scripts:
-    - type: after-response
+    - type: tests
       code: |-
         test("Le statut de la réponse est 200", function() {
           expect(res.status).to.equal(200);
