@@ -23,4 +23,4 @@ jobs:
         run: npm install -g @usebruno/cli
 
       - name: Exécuter la collection Bruno
-        run: bru run --recursive
+        run: bru run
