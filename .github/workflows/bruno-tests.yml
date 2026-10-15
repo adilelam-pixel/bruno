@@ -10,13 +10,13 @@ jobs:
   run-api-tests:
     runs-on: ubuntu-latest
 
-    # Configuration du conteneur Docker officiel Bruno
-    container:
-      image: usebruno/cli:latest
-
     steps:
       - name: Récupérer le code source
         uses: actions/checkout@v4
 
-      - name: Exécuter la collection Bruno
-        run: bru run
+      - name: Exécuter la collection Bruno via Docker
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/tools \
+            -w /tools \
+            usebruno/cli:latest run
