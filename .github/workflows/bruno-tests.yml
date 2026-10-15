@@ -1,4 +1,4 @@
-name: Bruno API Automation Tests
+name: Bruno API Tests (Docker)
 
 on:
   push:
@@ -10,17 +10,13 @@ jobs:
   run-api-tests:
     runs-on: ubuntu-latest
 
+    # Configuration du conteneur Docker officiel Bruno
+    container:
+      image: usebruno/cli:latest
+
     steps:
       - name: Récupérer le code source
         uses: actions/checkout@v4
-
-      - name: Configuration de Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Installer Bruno CLI
-        run: npm install -g @usebruno/cli
 
       - name: Exécuter la collection Bruno
         run: bru run
