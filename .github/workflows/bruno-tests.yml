@@ -1,4 +1,4 @@
-name: Bruno API Tests (Docker)
+name: Bruno API Tests (AWS Self-Hosted)
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-api-tests:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Récupérer le code source
